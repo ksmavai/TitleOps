@@ -1,0 +1,5 @@
+[2026-02-23 11:30:15] [ERROR] [db-pool-worker-4] PSQLException: FATAL: remaining connection slots are reserved for non-replication superuser connections
+[2026-02-23 11:30:16] [WARN] [HikariPool-1] Connection timeout after 30000ms. Active: 100, Idle: 0, Waiting: 45
+[2026-02-23 11:30:18] [ERROR] [PaymentService] Failed to process transaction tx_98127391: Could not acquire database connection.
+[2026-02-23 11:30:20] [CRITICAL] [HealthCheck] Database ping failed. Service marked as UNHEALTHY.
+[2026-02-23 11:30:25] [INFO] [LoadBalancer] Removing node payment-api-production-7f8b9 from rotation.

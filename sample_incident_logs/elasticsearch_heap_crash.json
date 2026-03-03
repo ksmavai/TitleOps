@@ -1,0 +1,9 @@
+{
+    "timestamp": "2026-02-23T11:30:00Z",
+    "level": "FATAL",
+    "service": "elasticsearch-cluster-node-1",
+    "message": "Node failed to join cluster. CircuitBreakingException: [parent] Data too large, data for [<transport_request>] would be [15321894120/14.2gb], which is larger than the limit of [15241852518/14.1gb]",
+    "exception": "org.elasticsearch.common.breaker.CircuitBreakingException",
+    "stack_trace": "at org.elasticsearch.indices.breaker.HierarchyCircuitBreakerService.checkParentLimit(HierarchyCircuitBreakerService.java:343)\nat org.elasticsearch.common.breaker.ChildMemoryCircuitBreaker.addEstimateBytesAndMaybeBreak(ChildMemoryCircuitBreaker.java:128)",
+    "action_required": "Increase JVM heap size (`-Xmx`) in jvm.options or clear fielddata cache via API."
+}
