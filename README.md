@@ -5,7 +5,11 @@ This repository contains my submission for the **First Canadian Title (FCT) Summ
 TitleOps is a prototype autonomous Site Reliability Engineering (SRE) agent designed to detect, diagnose, and auto-remediate infrastructure and application incidents in simulated environments.
 
 ## 🎥 Video Demonstration
-<!-- DROP THE VIDEO HERE -->
+
+
+https://github.com/user-attachments/assets/963057cf-4c15-459a-9ffe-235063c61c4b
+
+
 
 ---
 
