@@ -5,7 +5,9 @@ This repository contains my submission for the **First Canadian Title (FCT) Summ
 TitleOps is a prototype autonomous Site Reliability Engineering (SRE) agent designed to detect, diagnose, and auto-remediate infrastructure and application incidents in simulated environments.
 
 ## 🎥 Video Demonstration
-[**Link to Video Demonstration**] *(Insert YouTube/Drive link here or note that the file is uploaded to this repository)*
+<video src="https://github.com/ksmavai/TitleOps/raw/main/TitleOps_Demo.mp4" controls="controls" style="max-width: 100%;">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
