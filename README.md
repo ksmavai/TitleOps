@@ -4,20 +4,20 @@ This repository contains my submission for the **First Canadian Title (FCT) Summ
 
 TitleOps is a prototype autonomous Site Reliability Engineering (SRE) agent designed to detect, diagnose, and auto-remediate infrastructure and application incidents in simulated environments.
 
-## 🎥 Video Demonstration
+## Video Demonstration
 
 
 https://github.com/user-attachments/assets/963057cf-4c15-459a-9ffe-235063c61c4b
 
 
-
+Unfortunately my video got a bit cropped out at the end! Only noticed afterwards.
 ---
 
-## 🏗️ Architecture & Design
+## Architecture & Design
 
 TitleOps is built with a decoupled frontend and backend architecture to simulate a real-world observability platform and control plane.
 
-*   **Frontend (React/Vite/TypeScript/Tailwind):** A modern, skeuomorphic "Glassmorphism" dashboard that visualizes system telemetry, current health status, active incidents, and the autonomous actions taken by the AI agent.
+*   **Frontend (React/Vite/TypeScript/Tailwind):** A modern, skeuomorphic Bento-style dashboard that visualizes system telemetry, current health status, active incidents, and the autonomous actions taken by the AI agent.
 *   **Backend (Python/FastAPI):** The control plane that handles the heavy lifting. It acts as the intermediary between the simulated environment, the observability platform (Datadog), and the LLM reasoning engine.
 *   **Environment Simulator:** A custom-built engine (`simulator.py`) that generates synthetic microservice architectures, injects realistic failure scenarios (e.g., Database Deadlocks, Redis Timeouts), and emits corresponding telemetry and error logs.
 *   **Observability Integration:** Integrates directly with the **Datadog API** to push realistic time-series metrics during incidents and query them back for live dashboard visualization.
@@ -31,7 +31,7 @@ TitleOps is built with a decoupled frontend and backend architecture to simulate
 
 ---
 
-## 🧠 AI Techniques & Logic Used
+## AI Techniques & Logic Used
 
 The core intelligence of TitleOps relies on **Large Language Models (LLMs)** acting as goal-oriented agents, specifically utilizing the **DeepSeek API**.
 
@@ -41,7 +41,7 @@ The core intelligence of TitleOps relies on **Large Language Models (LLMs)** act
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 To run this prototype locally, you need both Node.js (for the frontend) and Python 3 (for the backend).
 
@@ -49,7 +49,7 @@ To run this prototype locally, you need both Node.js (for the frontend) and Pyth
 1. Node.js (v18+)
 2. Python (3.9+)
 3. An active **Datadog** account (API Key + APP Key)
-4. A **DeepSeek** API Key
+4. An **AI** API Key (I'd recommend DeepSeek)
 
 ### 1. Backend Setup
 ```bash
@@ -80,17 +80,3 @@ npm run dev
 ```
 
 The application will be available at `http://localhost:5173`.
-
----
-
-## 🔮 Assumptions & Future Improvements
-
-**Current Assumptions:**
-*   **Simulated Environment:** Since I do not have a massive, live Kubernetes cluster to safely break, incidents and logs are heavily simulated. The agent generates *real* mitigation commands, but the execution of those commands is evaluated logically rather than actually run against a live server.
-*   **Infrastructure-Level Fixes:** The assumption is that the AIOps agent is mitigating infrastructure issues (restarting pods, clearing caches) rather than committing code patches to business logic.
-
-**Future Improvement Ideas:**
-*   **Read-Only Integration with Real Clusters:** Connect the agent to a real, read-only Kubernetes cluster to fetch actual live logs and metrics instead of simulated ones.
-*   **Vector Database for Runbooks:** Implement RAG (Retrieval-Augmented Generation) so the agent can query a vector database of previous post-mortems and internal company runbooks before guessing a fix.
-*   **Multi-Agent Architecture:** Split the monolithic prompt into multi-agent debates (e.g., one agent proposes a fix, a "Security SRE" agent reviews the fix for safety, and an "Execution" agent runs it).
-*   **Human-in-the-Loop Granularity:** Currently, the system requires human approval before execution. Future iterations could allow the agent to auto-execute *low-risk* actions (like clearing a cache) while requiring approval for *high-risk* actions (like dropping a database table).
